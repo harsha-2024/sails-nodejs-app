@@ -1,10 +1,15 @@
 
-/**
- * config/bootstrap.js
- * Seed a couple of contacts on first lift (dev only)
- */
 module.exports.bootstrap = async function() {
   try {
+    // seed users only if none
+    const userCount = await User.count();
+    if (userCount === 0) {
+      const bcrypt = require('bcryptjs');
+      const hash = await bcrypt.hash('password', 10);
+      await User.create({ fullName: 'Demo User', email: 'demo@example.com', passwordHash: hash });
+      sails.log('Seeded demo user: demo@example.com / password');
+    }
+
     const count = await Contact.count();
     if (count === 0) {
       await Contact.createEach([

@@ -1,7 +1,7 @@
 {
   "name": "contacts-app",
-  "version": "1.0.0",
-  "description": "Sails.js scaffolded Contacts CRUD (Bootstrap UI, EJS views, pagination, validation, search, API + Web UI)",
+  "version": "1.1.0",
+  "description": "Sails.js Contacts CRUD with Auth (login/signup), Bootstrap UI, EJS views, pagination, search, API + Web UI",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -13,6 +13,7 @@
   "dependencies": {
     "sails": "^1.5.0",
     "sails-disk": "^2.1.0",
-    "ejs": "^3.1.10"
+    "ejs": "^3.1.10",
+    "bcryptjs": "^2.4.3"
   }
 }

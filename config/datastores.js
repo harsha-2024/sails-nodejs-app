@@ -1,9 +1,4 @@
 
-/**
- * config/datastores.js
- */
 module.exports.datastores = {
-  default: {
-    adapter: 'sails-disk'
-  }
+  default: { adapter: 'sails-disk' }
 };

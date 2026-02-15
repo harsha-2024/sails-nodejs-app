@@ -1,10 +1,5 @@
 
-/**
- * api/controllers/ContactController.js
- * Web UI actions. JSON API is provided by Blueprints under /api/v1/contact.
- */
 module.exports = {
-  // List with search + pagination
   index: async function (req, res) {
     try {
       const q = (req.query.q || '').trim();
@@ -34,12 +29,10 @@ module.exports = {
     }
   },
 
-  // Render form for new
   new: async function (req, res) {
     return res.view('contact/new', { contact: {}, errors: [] });
   },
 
-  // Create with validation
   create: async function (req, res) {
     const { firstName, lastName, email, phone, notes } = req.allParams();
     const errors = [];
@@ -70,7 +63,6 @@ module.exports = {
     }
   },
 
-  // Show one
   show: async function (req, res) {
     const id = Number(req.param('id'));
     const contact = await Contact.findOne({ id });
@@ -78,7 +70,6 @@ module.exports = {
     return res.view('contact/show', { contact });
   },
 
-  // Edit form
   edit: async function (req, res) {
     const id = Number(req.param('id'));
     const contact = await Contact.findOne({ id });
@@ -86,7 +77,6 @@ module.exports = {
     return res.view('contact/edit', { contact, errors: [] });
   },
 
-  // Update with validation
   update: async function (req, res) {
     const id = Number(req.param('id'));
     const { firstName, lastName, email, phone, notes } = req.allParams();
@@ -118,7 +108,6 @@ module.exports = {
     }
   },
 
-  // Delete
   destroy: async function (req, res) {
     const id = Number(req.param('id'));
     await Contact.destroyOne({ id });

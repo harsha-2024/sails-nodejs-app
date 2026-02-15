@@ -1,0 +1,23 @@
+
+<h2 class="mb-3">Sign up</h2>
+<form action="/signup" method="post" class="col-md-6">
+  <%- include('../partials/_errors', { errors }) %>
+  <div class="mb-3">
+    <label class="form-label">Full name</label>
+    <input name="fullName" class="form-control" value="<%= values.fullName || '' %>" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Email</label>
+    <input type="email" name="email" class="form-control" value="<%= values.email || '' %>" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Password</label>
+    <input type="password" name="password" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Confirm password</label>
+    <input type="password" name="passwordConfirm" class="form-control" required>
+  </div>
+  <button class="btn btn-primary" type="submit">Create account</button>
+  <a class="btn btn-link" href="/login">Already have an account? Login</a>
+</form>

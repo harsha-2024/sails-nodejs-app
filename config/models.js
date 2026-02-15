@@ -1,10 +1,6 @@
 
-/**
- * config/models.js
- * Global model settings
- */
 module.exports.models = {
-  migrate: 'alter', // auto-migrate in dev
+  migrate: 'alter',
   attributes: {
     id: { type: 'number', autoIncrement: true },
     createdAt: { type: 'number', autoCreatedAt: true },

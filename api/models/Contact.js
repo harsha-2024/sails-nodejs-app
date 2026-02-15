@@ -1,7 +1,4 @@
 
-/**
- * api/models/Contact.js
- */
 module.exports = {
   attributes: {
     firstName: { type: 'string', required: true, maxLength: 120 },
