@@ -1,0 +1,17 @@
+
+<h2 class="mb-3"><%= contact.firstName %> <%= contact.lastName %></h2>
+<dl class="row">
+  <dt class="col-sm-2">Email</dt>
+  <dd class="col-sm-10"><%= contact.email %></dd>
+  <dt class="col-sm-2">Phone</dt>
+  <dd class="col-sm-10"><%= contact.phone || '-' %></dd>
+  <dt class="col-sm-2">Notes</dt>
+  <dd class="col-sm-10"><pre class="mb-0"><%= contact.notes || '-' %></pre></dd>
+</dl>
+<div class="mt-3">
+  <a class="btn btn-secondary" href="/contacts">Back</a>
+  <a class="btn btn-primary" href="/contacts/<%= contact.id %>/edit">Edit</a>
+  <form class="d-inline" action="/contacts/<%= contact.id %>/delete" method="post" onsubmit="return confirm('Delete this contact?');">
+    <button class="btn btn-danger">Delete</button>
+  </form>
+</div>

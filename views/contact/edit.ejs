@@ -1,0 +1,5 @@
+
+<h2 class="mb-3">Edit Contact</h2>
+<form action="/contacts/<%= contact.id %>" method="post">
+  <%- include('./_form', { contact, errors, submitLabel: 'Update' }) %>
+</form>

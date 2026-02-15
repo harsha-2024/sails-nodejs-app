@@ -1,0 +1,29 @@
+
+<%- include('../partials/_errors', { errors: typeof errors !== 'undefined' ? errors : [] }) %>
+
+<div class="row">
+  <div class="col-md-8">
+    <div class="mb-3">
+      <label class="form-label">First name</label>
+      <input name="firstName" class="form-control" value="<%= contact.firstName || '' %>" required maxlength="120">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Last name</label>
+      <input name="lastName" class="form-control" value="<%= contact.lastName || '' %>" required maxlength="120">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input type="email" name="email" class="form-control" value="<%= contact.email || '' %>" required maxlength="254">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Phone</label>
+      <input name="phone" class="form-control" value="<%= contact.phone || '' %>" maxlength="40">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Notes</label>
+      <textarea name="notes" class="form-control" rows="4" maxlength="1000"><%= contact.notes || '' %></textarea>
+    </div>
+    <button class="btn btn-primary" type="submit"><%= submitLabel %></button>
+    <a class="btn btn-link" href="/contacts">Cancel</a>
+  </div>
+</div>
